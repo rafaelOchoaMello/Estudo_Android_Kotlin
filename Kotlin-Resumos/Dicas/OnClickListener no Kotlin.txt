@@ -1,0 +1,65 @@
+Etc::EventListenerClick no Kotlin
+
+
+There are five ways to use SetOnClickListener:
+
+First:
+
+button.setOnClickListener {
+    // Do some work here
+}
+Second:
+
+button.setOnClickListener(object : View.OnClickListener {
+    override fun onClick(view: View?) {
+        // Do some work here
+    }
+
+})
+Third:
+
+button.setOnClickListener(View.OnClickListener { view ->
+    // Do some work here
+})
+Forth:
+
+class MainActivity : AppCompatActivity(), View.OnClickListener{
+
+    lateinit var button : Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        button = findViewById(R.id.button1)
+        button.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View?) {
+        when(view?.id){
+            R.id.button1->{
+                // do some work here
+            }
+        }
+    }
+}
+Fifth:
+
+class MainActivity : AppCompatActivity(){
+
+    lateinit var button : Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        button = findViewById(R.id.button1)
+        button.setOnClickListener(listener)
+    }
+
+    val listener= View.OnClickListener { view ->
+        when (view.getId()) {
+            R.id.button1 -> {
+                // Do some work here
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+Extra-Passando dados de Activity -> Fragment
+
+- Assim como podemos passar dados entre activities via Intent, e captura-los via bundle, podemos
+transmitir dados entre activity e fragment.
+
+- É importante notar que há pequenas diferenças entre as duas formas, como por exemplo, o caso de não
+utilizarmos 'intent', mas o próprio 'bundle' para passar os dados.
+
+Exemplo :: --------------------------------------------------------------------------------------------
+
+//Método 'normal' de carregar um fragment
+	fun loadFragment(fragment: Fragment) {
+    
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frameConteudo, fragment)
+        transaction.commit()
+    
+    }
+
+
+//Enviando um dado para fragment e carregando-o
+
+    fun loadFragmentWithData(fragment: Fragment) {
+    
+        val transaction = supportFragmentManager.beginTransaction()
+
+        //Aqui que salvamos os dados a serem passados
+        val bundle: Bundle = Bundle()
+        this.bundle.putString("MSG", "Dados a serem recebidos")
+
+        //Aqui vamos adicionar nosso bundle e seus dados como argumento do fragment a ser carregado
+        fragment.arguments = bundle
+
+        transaction.replace(R.id.frameConteudo, fragment)
+        transaction.commit()
+    }
+
+
+
+- O carregamento dos dados no Fragment é um pouco diferente da forma como fazemos com relação 
+a passagem de activity -> activity. Como não utilizamos 'intent', e sim diretamente bundle, 
+obviamente não faremos o 'val dados: Bundle? = intent.extras'.
+
+- Ao invés, vamos utilizar a captura dos arguments enviados pela activity 'pai'
+
+
+Exemplo :: --------------------------------------------------------------------------------------------
+
+//Carregamento dos dados recebidos pela activty pai (em 'onCreateView()')
+
+  val texto: TextView = view.findViewById(R.id.contatosText)
+
+        //arguments é nativo dos fragments
+        val dados = arguments
+
+        if (dados !== null)
+            texto.setText(dados.getString("MSG", "No Data"))
+

@@ -1,0 +1,111 @@
+115.Herança
+
+- Como esperado, obviamente Kotlin permite herança. Diferente do Java em que devemos
+declarar que uma classe NÃO pode ser herdada, no Kotlin é ao contrário, sendo por 
+padrão impedido que isso ocorra.
+
+- Há duas formas de declarar a permissão a herança:
+	>> A primeira é com a palavra reservada 'open', desta forma a classe não só pode ser 
+	herdada, como também ser instânciada normalmente, como qualquer outra classe. 
+
+	>> A segunda é com a palavra reservada 'abstract', que assim como seu conceito universal em OO,
+	nos permite a herança, mas nos impede que esta seja instânciada. Além disso, uma classe abstrata
+	nor permite a declaração de métodos abstratos, que como sabemos terão obrigatóriamente que ser
+	re-implementados pela classe filha. 
+
+	(Ps): Caso seja desejado manter o escopo destes métodos apenas para as filhas, é importante
+	não esquecer de os declarar como métodos protegidos (protected).
+
+	Ex: protected abstract fun metodoClasseMae()
+
+
+Exemplo: Supondo uma implementação de Jobs para um RPG, onde temos uma classe mãe 'Jobs'
+que deve ser herdade pelas classes específicas de cada Job.
+
+//Classe mãe ------------------------------------------------------------------------------
+
+package miniRPG
+
+abstract class Job(
+    val name: String,
+    val levelRequire: Int,
+    val spellList: ArrayList<Spell> = arrayListOf()
+) {
+
+    var jobBonus: Int = 0
+        private set
+
+    init {}
+
+    fun setJobBonus(newBonus: Int) {
+        if (newBonus > jobBonus)
+            jobBonus = newBonus
+        else
+            println("Valor do bonus deve ser maior que o atual!")
+    }
+
+    fun showJobData(): String = "Classe: ${name} | Nível requerido: ${levelRequire} | Bonus: ${jobBonus}"
+    fun showJobSpells() {
+        for (spell in spellList)
+            spell.showSpellData()
+    }
+
+    protected abstract fun generateSpellData()
+}
+
+//Classe Filha - Forma 1 ------------------------------------------------------------------------------
+
+package miniRPG
+
+class Swordsman(val guildName: String) : Job("Swordsman", 1) {
+
+    init{
+        setJobBonus(11)
+        generateSpellData()
+    }
+
+    override fun generateSpellData() {
+        super.spellList.add(Spell("Sword Dance", 1, 4, 1, false, Element.NEUTRAL))
+        super.spellList.add(Spell("Double Slash", 1, 7, 1, false, Element.NEUTRAL))
+    }
+
+}
+
+
+//Classe Filha - Forma 2 ------------------------------------------------------------------------------
+
+package miniRPG
+
+class Swordsman:Job {
+  
+    val guildName:String
+
+    constructor(guildName:String):super("Swordsman", 1){
+        this.guildName = guildName
+    }
+
+    init{
+        setJobBonus(11)
+        generateSpellData()
+    }
+
+    override fun generateSpellData() {
+        super.spellList.add(Spell("Sword Dance", 1, 4, 1, false, Element.NEUTRAL))
+        super.spellList.add(Spell("Double Slash", 1, 7, 1, false, Element.NEUTRAL))
+    }
+
+}
+
+
+(ps A): É muito importante notar que tanto na declaração de extends (dizer que a classe é filha de outra),
+quanto de implements (dizer que uma classe implementa uma interface), a sintaxe é a mesma.
+
+(ps B): Mesmo que seja proibido herança múltipla, podemos muito bem ter uma herança de classe ao mesmo 
+tempo que várias implementações de interface
+
+Exemplo:: 
+
+    abstract class MySuperClass
+    interface MyInterface
+
+    class MyClass(...) : MySuperClass(), MyInterface

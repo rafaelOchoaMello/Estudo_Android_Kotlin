@@ -1,0 +1,42 @@
+Resumo Conceitual :: Fragments
+
+- Em um paralelo conceitual, podemos considerar os fragments como os módulos que 
+temos em react, de forma que estes possam então, ter uma re-utilização mais simples.
+
+- Um fragment é um componente independente do android, que pode ser utilizado por 
+uma activity. Eles encapsulam funcionalidades para que seja mais fácil reutilizar
+dentro de outras activities e layouts.
+
+- Podemos incorporar as nossas activities como fragments, de forma que é possível 
+ter comportamentos e display distintos em dispositivos diferentes (como o controle do 
+tipo de exibição entre um celular e um tablet).
+
+- O fragment contém seu próprio ciclo de vida, que contém particularidades específicas
+para seu propósito. Para mais detalhes, consultar o artigo.
+
+- A criação de um fragment vem da extensão da classe 'Fragment', ou de uma de suas sub-
+classes, sendo as mais comuns : ListFragment, DialogFragment ou PreferenceFragmentCompat.
+
+- Para uma maior facilidade na criação, remoção e substituição, é possível utilizar a 
+classe 'FragmentManager', também do pacote android.support.v4.app.
+
+- Assim como conseguimos passar dados e objetos entre activities, é possível enviar
+de uma activity para um fragment. É importante notar que nunca devemos criar uma 
+relação de conversa de dados diretamente entre os fragments, mas sim, entre o activity
+pai.
+
+- Para garantir que o fragment não tenha dependência de nada além dele mesmo, 
+
+
+(PS): Há duas fontes de importação de uma fragment ( android.support.v4.app e android.app ),
+devemos SEMPRE escolher  a  android.support.v4.app.Fragment. Esta possui o suporte da 
+Google e contém várias correções e suporte para versões mais antigas do Android.
+
+(PS): Assim como há uma maneira simples de criar uma activity no Android Studio, também
+o temos para o Fragment, basta ir em 'New' -> 'Fragment' -> Opção desejada
+
+- Há muito mais detalhes a respeito de fragment, este foi apenas uma revisão introdutória e
+também um resumo útil para relembrar. Revisar os links anexados.
+
+Artigo útil :: https://www.androidpro.com.br/blog/desenvolvimento-android/fragments/
+Doc.Oficial :: https://developer.android.com/guide/components/fragments?hl=pt-br

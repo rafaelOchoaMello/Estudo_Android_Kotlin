@@ -1,0 +1,38 @@
+33. When
+
+- O when dentro do Kotlin é semelhante aos switch-case das outra linguagens de programação.
+- Como base de exemplificação, vamos utilizar uma comparação entre o when e a nossa verifi-
+cação anterior utilizando o range.
+- Em geral, temos no switch-case a opção 'default' para os casos em que nenhuma condição
+foi atendida. No kotlin esta opção é o 'else'.
+
+Exemplo: 
+val notaRecebida: Int = 8
+
+fun verificaSePassou() {
+        if (notaRecebida in 9..10)
+            println("Parabéns, grande nota")
+        else if (notaRecebida in 7..8)
+            println("Passado, aproveite as férias!")
+        else if (notaRecebida in 5 .. 6)
+            println("Ainda dá pre recuperar, não desista!")
+        else if(notaRecebida in 1..4)
+            println("Não deu")
+    }
+
+fun verificaWhen(){
+        when(notaRecebida){
+            in 9..10 -> println("Incrível")
+            in 7..8 -> println("Parabéns")
+            in 4..6 -> println("Dá pra recuparar")
+            in 0..3 ->  println("Não deu ")
+            else -> println("Entrada inválida")
+        }
+    }
+
+fun TesteWhen(valor:Char){
+        when(valor){
+            'r','a','f','e','l' -> println("Do meu nome!")
+             else -> println("Não é do meu nome")
+        }
+    }

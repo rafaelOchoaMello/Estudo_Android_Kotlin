@@ -1,0 +1,15 @@
+18.Tipos básicos
+
+<<Tipos básicos Inteiros>>
+
+- Byte: val tipoByte: Byte = 127 
+
+- Short: val tipoShort: Short = 32767	
+
+- Int: val tipoInt: Int = 2_147_483_647
+
+- Long: val tipoLong: Long = 9_223_372_036_864_775_807
+
+(Ps): O valor atribuído nos exemplos representa o valor máximo que cada tipo comporta, 
+caso por algum motivo seja desejado obter esses valores, podemos utilizar o método
+.MAX_VALUE. Ex :: val maximo: Int = Int.MAX_VALUE

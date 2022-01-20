@@ -1,0 +1,40 @@
+85_86.Enum class 
+
+- É muito comum que seja necessário implementar um conjunto 'fechado' de dados,
+como por exemplo os estados de um pedido (ativo, cancelado, pendentes, etc..).
+
+- A sintaxe definidora é 'enum class NomeDoEnum{}'. Por convernsão o valor das constantes
+de enumeração são declarados com letras maiúsculas e separados por vírgula.
+
+Exemplo ::
+
+	enum class DiaSemana{
+		DOMINGO, SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA, SABADO
+	}
+
+- O acesso é bem simples, basta declarar o nome da classe seguido no campo. 
+
+Exemplo :: 
+	println("O melhor dia da semana é ${DiaSemana.SABADO}")
+
+
+- Uma enumeração pode ser muito mais 'rica' e compor mais dados do que apenas os elementos
+definidores de cada campo. Podemos passar variáveis para o construtor como em uma classe qualquer, e 
+estes podem ser atrelados a cada um dos valores definidos para o enum.
+
+Exemplo :: Incrementando o enum anterior
+
+	enum class DiaSemana(val id:Int, val nome:String, val util:Boolean){
+		DOMINGO (1, 'Domingo', false),
+		SEGUNDA (2, 'Segunda-Feira', true),
+		TERCA	(3, 'Terça-Feira', true),
+		QUARTA  (4,'Quarta-Feira', true),
+		QUINTA  (5,'Quinta-Feira', true),
+		SEXTA   (6,'Sexta-Feira', true),
+		SABADO  (7, 'Sábado', false)
+	} 
+
+	fun listarDias(){
+		for (dia in DiaSemana.values())
+			println(dia.nome)
+	}

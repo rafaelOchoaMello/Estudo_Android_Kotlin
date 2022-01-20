@@ -1,0 +1,17 @@
+Aula 25. Elvis Operator
+
+- Por curiosidade, tem realmente este nome em homenagem, graças ao 
+fato da assinatura do operador ser semelhante ao emoji utilizado para
+o representar (?:).
+
+- O mesmo é utilizado como um valor 'padrão', para casos em que o 
+atributo em algúm momento possívelmente não vá ter.
+
+Exemplo: Um atributo de valor obrigatório que recebe como valor, 
+um outro de valor opcional.
+
+	val opcional: String? = null
+	val obrigatorio: String = opcional ?: 'Valor padrão'
+
+- O efeito seria o semelhante ao da utilização de um condicional 
+ternário, mas esta é uma forma menos verbosa de fazer isso.

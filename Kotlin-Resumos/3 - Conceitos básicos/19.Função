@@ -1,0 +1,29 @@
+Aula 19 :: Função
+
+- Funções/métodos em kotlin tem uma assinatura que lembra uma
+mistura de Typescript e Python.
+
+Exemplos:
+	fun soma(a:Int, b:Int): Int {
+		return a+b
+	}
+
+	Ps: Quando o método só tem um comportamento, e este for um retorno, podemos fazer
+	fun soma(a:Int, b:Int): Int = a+b
+
+
+- Caso o método não tenha retorno, podemos omitir a declaração de tipo na assinatura
+do mesmo. 
+
+Exemplo:
+	fun mostraValor(valor:Int) {
+		println("O valor numérico é ${valor}")
+	}
+
+- Também é possível definir um valor padrão caso nada seja passado para algum parâmetro
+de entrada.
+
+Exemplo:
+	fun soma(a:Int = 0, b:Int = 0): Int {
+			return a+b
+		}

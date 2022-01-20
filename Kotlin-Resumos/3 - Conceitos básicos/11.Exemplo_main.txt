@@ -1,0 +1,14 @@
+Exemplo base de classe main em Kotlin:
+* Partindo do pressuposto que a mesma se encontra dentro de uma pasta/package chamada 'fundamentos'.
+
+
+package fundamentos
+
+fun main(args: Array<String>){
+	print("Hello World!")
+	println("Olá mundo!");
+}
+
+
+* = Como podemos ver, o uso de ponto-e-vírgula (';') é opcional
+* = Podemos ver também, que métodos em Kotlin são declarados como 'fun'

@@ -1,0 +1,4 @@
+61.Simulando multiplos retornos
+
+- Assim como Java, não temos nativamente suporte para o retorno de múltiplos valores
+dentro de um método. Porém isto pode ser 'remediado' utilizando o destructuring.

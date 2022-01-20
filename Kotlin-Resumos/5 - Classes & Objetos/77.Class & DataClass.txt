@@ -1,0 +1,18 @@
+77.Class & DataClass
+
+- A diferença é relativamente simples, a classe, como já se sabe, 
+contém métodos e atributos e apresenta implementações para diversos 
+propósitos. 
+
+- Em contrapartida, uma 'Data Class' é uma classe que é muito mais 
+focada nos dados (atributos), cujo os métodos (quando existem) servem
+apenas para o escopo de acessos aos atributos (Gets e Sets).
+
+- Data class fora criado em Kotlin para assumir de forma mais elegante a 
+este propósito, além de contar com métodos nativos como equals e também 
+possibilitar o uso do destructuring e do métodos '.toString()' e '.copy()'.
+
+- É importante notar que não são apenas diferenças 'conceituais', há 
+características impactantes entre as duas, data class por exemplo,
+não lida nada bem com herança, sendo nestes casos recomendável utilizar
+uma classe 'comum'.
