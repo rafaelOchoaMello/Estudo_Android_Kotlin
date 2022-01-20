@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Primeiro App</string>
+    <string name="author">Rafael Ochôa Mello</string>
+    <string name="emptyDisplay"></string>
+    <!--    Textos de botões-->
+    <string name="testBtn">Clique aqui meu chapa!</string>
+    <string name="actChangeBtn">Mudar de tela</string>
+    <string name="closeActivityBtn">Voltar</string>
+
+    <!--    Labels para inputs-->
+    <string name="nameInputLabel">Nome</string>
+    <!--    Labels de acessibilidade-->
+    <string name="acess_nameInputLabel">Nome…</string>
+    <!--    Labels de description de componentes    -->
+    <string name="separationBar">Separation bar</string>
+    <!--    Botão de carregar o nome-->
+    <string name="loadNameButtonText">Carregar…</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
