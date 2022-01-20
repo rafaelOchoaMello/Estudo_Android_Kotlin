@@ -52,6 +52,7 @@ class ContatosFragment : Fragment() {
         if (dados !== null)
             texto.setText(dados.getString("MSG", "No Data"))
 
+
         return view
     }
 

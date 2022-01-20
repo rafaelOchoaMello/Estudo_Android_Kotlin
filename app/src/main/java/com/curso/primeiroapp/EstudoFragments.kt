@@ -42,9 +42,8 @@ class EstudoFragments : AppCompatActivity() {
         //Listener das conversas
         buttonConversa.setOnClickListener {
             loadFragment(conversaFragment)
+            //loadFragmentWithObject(conversaFragment)
         }
-
-
     }
 
     fun loadFragment(fragment: Fragment) {
@@ -63,4 +62,19 @@ class EstudoFragments : AppCompatActivity() {
         transaction.replace(R.id.frameConteudo, fragment)
         transaction.commit()
     }
+
+//    fun loadFragmentWithObject(fragment: Fragment) {
+//        val poke: Pokemon = Pokemon("Bulbasaur", 7)
+//
+//        val bundle: Bundle = Bundle()
+//        bundle.putSerializable("A", poke)
+//        fragment.arguments = bundle
+//
+//        val transaction = supportFragmentManager.beginTransaction()
+//        transaction.replace(R.id.frameConteudo, fragment)
+//        transaction.commit()
+//    }
+
 }
+
+
