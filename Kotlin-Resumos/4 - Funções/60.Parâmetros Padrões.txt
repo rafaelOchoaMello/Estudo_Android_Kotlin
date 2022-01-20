@@ -1,0 +1,16 @@
+60.Parâmetros Padrões
+
+- Assim como em TS/JS, o Kotlin nos permite a possibilidade de definir
+valores padrões para os parâmetros dos nossos métodos.
+
+- Dessa forma, no dá a possibilidade de chamar um método sem passar valores 
+para os parâmetros, onde nesses casos, eles assumirão o valor padrão que 
+definimos na sua assinatura.
+
+Exemplo :: 
+	
+	fun potencia( base:Int = 2, expoente:Int = 1 ):Int {
+
+		return Math.pow(base.toDouble(), expoente.toDouble()).toInt()
+	
+	}

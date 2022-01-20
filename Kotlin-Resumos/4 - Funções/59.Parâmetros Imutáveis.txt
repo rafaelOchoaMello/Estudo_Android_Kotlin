@@ -1,0 +1,13 @@
+59.Parâmetros Imutáveis
+
+- Basicamente, significa que os parâmetros recebidos nos métodos são considerados
+como constantes. Em outras palavras, não podemos nem conseguimos alterar o valor 
+dos mesmos.
+
+Exemplo :: Isso não é possível
+		
+	fun incremento(valor:Int){
+		incremento++
+		//ou
+		incremento = incremento + 1
+	}

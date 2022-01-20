@@ -1,0 +1,31 @@
+67/68.Metodos como parametros
+
+- Assim como em outras linguagens de programação, é possível enviar um método como parâmetro para outro.
+
+- A assinatura porém, é um pouco estranha: 
+
+	fun somar(vA: Int = 0, vB: Int = 0): Int = vA + vB
+
+	fun calcularNota (a: Int, b:Int,  funcao:(Int, Int) -> Int): Int {
+		return funcao(a, b) 
+	}
+
+- Em um resumo, a assinatura é 'nomeDoMétodo: (tipo dos parâmetros) -> tipo de retorno'
+
+
+- A chamada dos métodos como parâmetro também segue algumas particularidades, onde 
+vai depender se é um método 'top level', ou um método que existe dentro de uma classe.
+
+
+Exemplo - A :: Chamada em um método top level
+	
+	println( calcularNota(2,3,  ::somar )) 
+
+
+Exemplo - B :: Chamada de um método de classe
+
+	//Supondo que o nosso método somar estivesse dentro da classe 
+	'Operacoes'
+
+	println( calcularNota(2,3,  Operacoes()::somar )) 
+

@@ -1,0 +1,44 @@
+\102.Passando dados entre Activities
+
+- Como era de se esperar o intercâmbio de dados entre activities não só
+é possível, como esperado e necessário em diversas situações.
+
+- Como vimos na introdução sobre activities, vamos utilizar o intent implementado
+para a troca de activities, para também passar dados entre elas. 
+
+- O método em questão é o '.putExtra(tituloDoCampoPassado, valorDoCampoPassado)', 
+é importante notar que basicamente o primeiro parâmeto trabalha como se fosse um 
+índice/chave para o dado em questão.
+
+Exemplo :: Trocando de activity e enviados dados 
+
+	fun mudarDeActivity(view:View){
+		val intent: Intent( this, nomeSegundaActivity::class.java )
+
+		intent.putExtra("nome", "Rafael Ochoa Mello")
+		intent.putExtra("idade", 27)
+
+		startActivity(intent)
+	}
+
+
+- Na activity atual, cujo qual fora carregada, podemos recuperar os dados dentro do 
+próprio 'onCreate'. Para isto vamos utilizar a classe 'Bundle'.
+
+Exemplo :: Recuperando dados da activity anterior via Bundle (em 'onCreate')
+
+	//Referência aos campos a serem alterados
+        val textoNome: TextView = findViewById(R.id.nomeReceber)
+        val textoIdade: TextView = findViewById(R.id.idadeReceber)
+
+        val dados: Bundle? = intent.extras
+
+        if(dados !== null){
+            textoNome.setText(dados.getString("nome", "Fulano").toString())
+            textoIdade.setText(dados.getInt("idade", 0).toString())
+        }
+
+- Note que há dois gets diferentes, na verdade, há vários, cada um para um tipo
+diferente de dado.
+
+Documentação :: https://developer.android.com/guide/components/activities/parcelables-and-bundles?hl=pt-br

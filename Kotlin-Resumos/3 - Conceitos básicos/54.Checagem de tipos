@@ -1,0 +1,30 @@
+54.Checagem de tipos
+
+- A checagem de tipo é simplesmente realizada a partir da palavra reservada 'is'
+
+Exemplo ::
+	val valor = "abc"
+
+    fun checaTipo(){
+        //Verifica se é
+        if(valor is String)
+            println("É uma string")
+        //Verifica se não é
+        if(valor !is String)
+            println("Não é uma string")
+    }
+
+
+- Também há o SmartCast, que define um cast automático interno nos
+casos que o tipo bate com o checado via 'is', permitindo usar diretamente
+os métodos nativos daquele tipo.
+
+Exemplo :: SmartCast usando when (Switch-case do Kotlin)   
+
+    fun whenComSmartCast(x: Any){
+        when(x){
+            is String -> println(x.uppercase(Locale.getDefault()))
+            is Int -> println(x.plus(2))
+            else -> println("Parâmetro de tipo não suportado")
+        }
+    }

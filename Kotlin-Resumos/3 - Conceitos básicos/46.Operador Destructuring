@@ -1,0 +1,29 @@
+46.Operador Destructuring
+
+- Assim como temos em diversas linguagens, como JS e TS, esta é uma opção de 
+operador válida em Kotlin.
+
+- É importante notar que este não é um recurso nativo do Java, de forma que 
+fora com o Kotlin que isto passou a ser possível.
+
+- A definição é a já conhecida captura de dados destruturando o objeto ou 
+array original.
+
+Exemplo :: Supondo uma classe carro
+
+	data class Carro(val marca:String, val modelo:String)
+
+	val novoCarro = TesteDestruct("Ford", "Fusion")
+    val (marca, modelo) = novoCarro
+
+
+Exemplo :: Supondo uma lista
+
+	val (marido, mulher) = listOf("João", "Maria")
+    println("Marido:${marido}, Mulher:${mulher}")
+
+Exemplo :: Ignorando x ocorrências e capturando somento o 
+o elemento y da desestruturação
+
+	val (_,_,terceiroLugar) = listOf("Luigi", "Mario", "Toad")
+    println("Terceiro  Lugar: ${terceiroLugar}")
