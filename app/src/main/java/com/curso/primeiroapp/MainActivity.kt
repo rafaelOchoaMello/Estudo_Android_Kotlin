@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import kotlin.random.Random
@@ -14,6 +15,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val btnTelaCapa: Button = findViewById(R.id.btn_TelaDeCapa)
+        btnTelaCapa.setOnClickListener {
+            changeToTelaDeCapa()
+        }
+
     }
 
     //Exemplo de criação de uma troca de activity e
@@ -43,6 +50,12 @@ class MainActivity : AppCompatActivity() {
         val intent: Intent = Intent(this, EstudoFragments::class.java)
         startActivity(intent)
     }
+
+    fun changeToTelaDeCapa() {
+        val intent: Intent = Intent(this, CapaActivity::class.java)
+        startActivity(intent)
+    }
+
 
     fun carregarInputNome(view: View) {
         val inputName: EditText = findViewById(R.id.editName)
