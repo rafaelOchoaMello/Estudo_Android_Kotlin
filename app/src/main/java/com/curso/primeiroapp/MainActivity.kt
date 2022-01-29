@@ -17,10 +17,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnTelaCapa: Button = findViewById(R.id.btn_TelaDeCapa)
+        val btnTelaRecycler: Button = findViewById(R.id.recyclerBtn)
+
         btnTelaCapa.setOnClickListener {
             changeToTelaDeCapa()
         }
 
+        btnTelaRecycler.setOnClickListener {
+            changeToRecycleActivity()
+        }
+
+
+    }
+
+    fun changeToRecycleActivity() {
+        val intent: Intent = Intent(this, RecyclerViewActivity::class.java)
+        startActivity(intent)
     }
 
     //Exemplo de criação de uma troca de activity e

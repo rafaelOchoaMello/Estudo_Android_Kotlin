@@ -6,9 +6,12 @@
         <entry key="..\:/Users/Micro/AndroidStudioProjects/PrimeiroApp/app/src/main/res/layout/activity_capa.xml" value="0.33" />
         <entry key="..\:/Users/Micro/AndroidStudioProjects/PrimeiroApp/app/src/main/res/layout/activity_estudo_fragments.xml" value="0.33" />
         <entry key="..\:/Users/Micro/AndroidStudioProjects/PrimeiroApp/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Micro/AndroidStudioProjects/PrimeiroApp/app/src/main/res/layout/activity_recycler_view.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/Micro/AndroidStudioProjects/PrimeiroApp/app/src/main/res/layout/activity_segunda_tela.xml" value="0.5" />
         <entry key="..\:/Users/Micro/AndroidStudioProjects/PrimeiroApp/app/src/main/res/layout/fragment_contatos.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/Micro/AndroidStudioProjects/PrimeiroApp/app/src/main/res/layout/fragment_conversa.xml" value="0.40260416666666665" />
+        <entry key="..\:/Users/Micro/AndroidStudioProjects/PrimeiroApp/app/src/main/res/layout/recyclerview_list_item.xml" value="0.33" />
+        <entry key="..\:/Users/Micro/AndroidStudioProjects/PrimeiroApp/app/src/main/res/layout/recyclerviewlistitem.xml" value="0.30364583333333334" />
       </map>
     </option>
   </component>
