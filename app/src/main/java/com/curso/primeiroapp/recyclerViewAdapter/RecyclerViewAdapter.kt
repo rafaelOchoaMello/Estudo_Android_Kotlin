@@ -6,11 +6,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.dynamicanimation.R
 import androidx.recyclerview.widget.RecyclerView
+import com.curso.primeiroapp.model.Jogos
 
 //O Adaptar vai como o nome diz 'adaptar' o RecyclerView para que ele mostre a nossa
 //lista do modo como quisermos, para isto, utilizamos dentro dele um holder, que
 //de fato terá como função, conter cada um dos elementos.
-class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
+
+//É nele que também vamos receber a lista de dados que devem ser mostrados
+class RecyclerViewAdapter(
+    val listaJogos:ArrayList<Jogos> = arrayListOf()
+) : RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
 
     //Aqui vem a viewHolder :: Conterá os dados a serem exibidos
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -34,14 +39,14 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolde
     //onBindViewHolder :: É aqui que a exibição ocorre
     //É importante notar, que os dados podem ser dinâmicos, vindos por exemplo de uma lista
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.titulo.setText("Pokémon Yellow")
-        holder.genero.setText("RPG")
-        holder.ano.setText("199x")
+        holder.titulo.setText(listaJogos[position].titulo)
+        holder.genero.setText(listaJogos[position].genero)
+        holder.ano.setText(listaJogos[position].ano)
     }
 
     //getItemCount :: Retorna a quantidade de elementos que serão exibidos
     override fun getItemCount(): Int {
-        return 15
+        return listaJogos.size
     }
 
 }
