@@ -28,16 +28,23 @@ class RecyclerViewActivity : AppCompatActivity() {
         val myAdapter: RecyclerViewAdapter = RecyclerViewAdapter(jogos)
 
 
-        //CONFIGURAÇÕES RECYCLERVIEW ::::
+        //CONFIGURAÇÕES RECYCLERVIEW ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
         //Melhora o desempenho
         recyclerView.setHasFixedSize(true)
+
         //Define e configura o layout manager. Neste caso, definido somente como vertical
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
         //Define o adapter
         recyclerView.adapter = myAdapter
+
         //Cria um divisor visual entre os elementos da lista - Neste caso uma simples linha
         //É passado o contexto, e também o sentido (não o da linha em si, mas do display dos elementos)
         recyclerView.addItemDecoration(DividerItemDecoration(this, LinearLayout.VERTICAL))
+
+        //Evento de click - há várias formas de fazer, pesquisar alguma no google
+        // recyclerView.addOnItemTouchListener()
 
     }
 
@@ -47,5 +54,20 @@ class RecyclerViewActivity : AppCompatActivity() {
         this.jogos.add(Jogos("Super Mario Bros", "Plataforma", "1988"))
         this.jogos.add(Jogos("Pokémon Yellow", "RPG", "1998"))
         this.jogos.add(Jogos("Pokémon Gold", "RPG", "1999"))
+        this.jogos.add(Jogos("Super Mario Sunshine", "Plataforma 3D", "-"))
+        this.jogos.add(Jogos("Sonic Heroes", "Plataforma 3D", "-"))
+        this.jogos.add(Jogos("Super Mario Strikers", "Esportes", "-"))
+        this.jogos.add(Jogos("The Legend of Zelda WindWaker", "RPG", "-"))
+        this.jogos.add(Jogos("Luigi's Mansion", "Aventura", "-"))
+        this.jogos.add(Jogos("Donkey Kong Country Returns", "Plataforma", "-"))
+        this.jogos.add(Jogos("Wario Land Shake It", "Exploração", "-"))
+        this.jogos.add(Jogos("Kirby's Adventure Wii", "Plataforma", "-"))
+        this.jogos.add(Jogos("Super Smash Bros Brawl", "Luta", "-"))
+        this.jogos.add(Jogos("Advanced Wars", "Estratégia", "-"))
+        this.jogos.add(Jogos("Metroid Fusion", "Aventura", "-"))
+        this.jogos.add(Jogos("Final Fantasy Tatics Adv.", "Estratégia", "-"))
+        this.jogos.add(Jogos("Dr.Mario", "Puzzle", "-"))
+        this.jogos.add(Jogos("Ice Climber", "Arcade", "-"))
+        this.jogos.add(Jogos("Alex Kidd in Miracle World", "Plataforma", "-"))
     }
 }

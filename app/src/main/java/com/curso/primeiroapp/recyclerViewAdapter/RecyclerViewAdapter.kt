@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.dynamicanimation.R
 import androidx.recyclerview.widget.RecyclerView
 import com.curso.primeiroapp.model.Jogos
@@ -14,7 +15,7 @@ import com.curso.primeiroapp.model.Jogos
 
 //É nele que também vamos receber a lista de dados que devem ser mostrados
 class RecyclerViewAdapter(
-    val listaJogos:ArrayList<Jogos> = arrayListOf()
+    val listaJogos: ArrayList<Jogos> = arrayListOf()
 ) : RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
 
     //Aqui vem a viewHolder :: Conterá os dados a serem exibidos
@@ -22,6 +23,18 @@ class RecyclerViewAdapter(
         val titulo: TextView = itemView.findViewById(com.curso.primeiroapp.R.id.textTitulo)
         val ano: TextView = itemView.findViewById(com.curso.primeiroapp.R.id.textAno)
         val genero: TextView = itemView.findViewById(com.curso.primeiroapp.R.id.textGenero)
+        var itemPosition: Int = -1
+
+        //Supostamente aqui podemos definir o click listener, vou tentar um Toast
+        init {
+            itemView.setOnClickListener {
+                Toast.makeText(
+                    itemView.context,
+                    "${titulo.text} -  ${itemPosition}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 
     //Estes métodos são nativos e necessítam ser implementados
@@ -42,6 +55,7 @@ class RecyclerViewAdapter(
         holder.titulo.setText(listaJogos[position].titulo)
         holder.genero.setText(listaJogos[position].genero)
         holder.ano.setText(listaJogos[position].ano)
+        holder.itemPosition = position
     }
 
     //getItemCount :: Retorna a quantidade de elementos que serão exibidos
