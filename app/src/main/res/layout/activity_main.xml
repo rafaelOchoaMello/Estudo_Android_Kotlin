@@ -111,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loadedName"
-        app:layout_constraintVertical_bias="0.88" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button4"
@@ -143,11 +143,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RecyclerView"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_TelaDeCapa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toEndOf="@+id/btn_TelaDeCapa"
-        app:layout_constraintTop_toBottomOf="@+id/loadedName"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintStart_toEndOf="@+id/btn_TelaDeCapa" />
+
+    <Button
+        android:id="@+id/cardViewBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CardRecyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loadedName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
