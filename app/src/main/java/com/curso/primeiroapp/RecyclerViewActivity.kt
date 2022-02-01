@@ -2,6 +2,8 @@ package com.curso.primeiroapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.curso.primeiroapp.model.Jogos
@@ -33,10 +35,13 @@ class RecyclerViewActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         //Define o adapter
         recyclerView.adapter = myAdapter
+        //Cria um divisor visual entre os elementos da lista - Neste caso uma simples linha
+        //É passado o contexto, e também o sentido (não o da linha em si, mas do display dos elementos)
+        recyclerView.addItemDecoration(DividerItemDecoration(this, LinearLayout.VERTICAL))
 
     }
 
-    private fun loadJogos(){
+    private fun loadJogos() {
         this.jogos.add(Jogos("Super Mario Bros", "Plataforma", "1985"))
         this.jogos.add(Jogos("Super Mario Bros 2", "Plataforma", "1986"))
         this.jogos.add(Jogos("Super Mario Bros", "Plataforma", "1988"))
