@@ -43,9 +43,6 @@ class RecyclerViewActivity : AppCompatActivity() {
         //É passado o contexto, e também o sentido (não o da linha em si, mas do display dos elementos)
         recyclerView.addItemDecoration(DividerItemDecoration(this, LinearLayout.VERTICAL))
 
-        //Evento de click - há várias formas de fazer, pesquisar alguma no google
-        // recyclerView.addOnItemTouchListener()
-
     }
 
     private fun loadJogos() {
