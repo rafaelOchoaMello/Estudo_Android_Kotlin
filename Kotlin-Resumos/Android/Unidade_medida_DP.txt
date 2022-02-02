@@ -1,5 +1,0 @@
-Sobre DP (Unidade de medida android):
-- É a unidade de medida de densidade de pixel para as diversas telas do Android.
-- É utilizado de forma a independer da intensidade de pixels e dimensões de telas entre diferenes dispositivos.
-- Com DP, os tamanhos definidos no protótipo do projeto tem suas proporções 'respeitadas' indiferente do tamanho da tela. Desta forma, por exemplo, se um botão ocupa 20% de uma tela pequena, o mesmo também ocupará 20% de uma tela média ou grande.
-- Graças a isso, podemos afirmar que DP é uma unidade de medida 'virtual'

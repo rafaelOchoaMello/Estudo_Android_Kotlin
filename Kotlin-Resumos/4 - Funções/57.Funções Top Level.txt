@@ -1,7 +1,0 @@
-57.Funções Top Level
-
-- Em um resumo simples, consideramos funções como 'Top Level' aquelas que estão FORA
-de uma classe. Um exemplo disso é a própria 'main', que não é uma classe.
-
-- Isso significa que podem ser considerados como métodos 'globais'
- 
