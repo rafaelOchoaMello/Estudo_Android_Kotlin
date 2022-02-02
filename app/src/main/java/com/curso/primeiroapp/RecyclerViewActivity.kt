@@ -36,7 +36,7 @@ class RecyclerViewActivity : AppCompatActivity() {
         //Define e configura o layout manager. Neste caso, definido somente como vertical
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        //Define o adapter
+        //Define o adapter do recycler com base no nosso próprio adapter
         recyclerView.adapter = myAdapter
 
         //Cria um divisor visual entre os elementos da lista - Neste caso uma simples linha

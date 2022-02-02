@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.curso.primeiroapp.cardView.CardViewActivity
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnTelaCapa: Button = findViewById(R.id.btn_TelaDeCapa)
         val btnTelaRecycler: Button = findViewById(R.id.recyclerBtn)
+        val btnTelaRecCard: Button = findViewById(R.id.cardViewBtn)
 
         btnTelaCapa.setOnClickListener {
             changeToTelaDeCapa()
@@ -27,11 +29,20 @@ class MainActivity : AppCompatActivity() {
             changeToRecycleActivity()
         }
 
+        btnTelaRecCard.setOnClickListener{
+            changeToCardRecActivity()
+        }
+
 
     }
 
     fun changeToRecycleActivity() {
         val intent: Intent = Intent(this, RecyclerViewActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun changeToCardRecActivity() {
+        val intent: Intent = Intent(this, CardViewActivity::class.java)
         startActivity(intent)
     }
 
