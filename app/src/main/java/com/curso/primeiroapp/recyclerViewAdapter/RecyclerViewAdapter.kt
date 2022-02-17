@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.dynamicanimation.R
 import androidx.recyclerview.widget.RecyclerView
 import com.curso.primeiroapp.model.Jogos
 

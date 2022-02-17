@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         val btnTelaCapa: Button = findViewById(R.id.btn_TelaDeCapa)
         val btnTelaRecycler: Button = findViewById(R.id.recyclerBtn)
         val btnTelaRecCard: Button = findViewById(R.id.cardViewBtn)
+        val btnSharedPref: Button = findViewById(R.id.btnSharedPref)
 
         btnTelaCapa.setOnClickListener {
             changeToTelaDeCapa()
@@ -33,7 +34,16 @@ class MainActivity : AppCompatActivity() {
             changeToCardRecActivity()
         }
 
+        btnSharedPref.setOnClickListener{
+            changeToSharedPrefActivity()
+        }
 
+
+    }
+
+    fun changeToSharedPrefActivity(){
+        val intent:Intent = Intent(this, SharedPrefActivity::class.java)
+        startActivity(intent)
     }
 
     fun changeToRecycleActivity() {
